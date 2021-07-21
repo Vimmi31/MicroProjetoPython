@@ -1,0 +1,29 @@
+[
+    {
+        "label": "tudo.Menu",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tudo.Menu",
+        "description": "tudo.Menu",
+        "detail": "tudo.Menu",
+        "documentation": {}
+    },
+    {
+        "label": "tudo.operacoes",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tudo.operacoes",
+        "description": "tudo.operacoes",
+        "detail": "tudo.operacoes",
+        "documentation": {}
+    },
+    {
+        "label": "cont",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "cont = 0\ntry:\n    while True:\n        if cont != 0:\n            input('Aperte quanquer tecla para voltar ao Menu')\n        Menu.cabecalho()\n        resp = Menu.Menu(['Adicionar pessoas', 'Ver pessoas adicionadas', 'Sair'])\n        if resp == 1:\n            operacoes.adicionaPessoa()\n        elif resp == 2:",
+        "detail": "main",
+        "documentation": {}
+    }
+]
