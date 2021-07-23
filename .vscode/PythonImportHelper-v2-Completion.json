@@ -27,12 +27,11 @@
         "documentation": {}
     },
     {
-        "label": "cont",
-        "kind": 5,
-        "importPath": "MicroProjeto.main",
-        "description": "MicroProjeto.main",
-        "peekOfCode": "cont = 0\ncaminho = operacoes.ehCaminho('Aonde está o arquivo ou aonde você quer cria-lo?(Digite o caminho inteiro) ')\nos.system('clear') or None\ntry:\n    while True:\n        if cont != 0:\n            input('Aperte qualquer tecla para voltar ao Menu')\n        Menu.cabecalho()\n        resp = Menu.Menu(['Adicionar pessoas', 'Ver pessoas adicionadas', 'Sair'])\n        if resp == 1:",
-        "detail": "MicroProjeto.main",
+        "label": "platform",
+        "importPath": "sys",
+        "description": "sys",
+        "isExtraImport": true,
+        "detail": "sys",
         "documentation": {}
     },
     {
@@ -40,7 +39,16 @@
         "kind": 5,
         "importPath": "MicroProjeto.main",
         "description": "MicroProjeto.main",
-        "peekOfCode": "caminho = operacoes.ehCaminho('Aonde está o arquivo ou aonde você quer cria-lo?(Digite o caminho inteiro) ')\nos.system('clear') or None\ntry:\n    while True:\n        if cont != 0:\n            input('Aperte qualquer tecla para voltar ao Menu')\n        Menu.cabecalho()\n        resp = Menu.Menu(['Adicionar pessoas', 'Ver pessoas adicionadas', 'Sair'])\n        if resp == 1:\n            operacoes.adicionaPessoa(caminho = caminho)",
+        "peekOfCode": "caminho = operacoes.ehCaminho('Aonde está o arquivo ou aonde você quer cria-lo?(Digite o caminho inteiro) ')\nif platform == 'win32':\n    os.system('cls')\ncont = 0\ntry:\n    while True:\n        if cont != 0:\n            input('Aperte qualquer tecla para voltar ao Menu')\n        Menu.cabecalho()\n        resp = Menu.Menu(['Adicionar pessoas', 'Ver pessoas adicionadas', 'Sair'])",
+        "detail": "MicroProjeto.main",
+        "documentation": {}
+    },
+    {
+        "label": "cont",
+        "kind": 5,
+        "importPath": "MicroProjeto.main",
+        "description": "MicroProjeto.main",
+        "peekOfCode": "cont = 0\ntry:\n    while True:\n        if cont != 0:\n            input('Aperte qualquer tecla para voltar ao Menu')\n        Menu.cabecalho()\n        resp = Menu.Menu(['Adicionar pessoas', 'Ver pessoas adicionadas', 'Sair'])\n        if resp == 1:\n            operacoes.adicionaPessoa(caminho = caminho)\n        elif resp == 2:",
         "detail": "MicroProjeto.main",
         "documentation": {}
     }

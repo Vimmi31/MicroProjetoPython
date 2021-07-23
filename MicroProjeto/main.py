@@ -1,11 +1,13 @@
 import tudo.Menu as Menu
 import tudo.operacoes as operacoes
 import os
-cont = 0
+from sys import platform 
 
 caminho = operacoes.ehCaminho('Aonde está o arquivo ou aonde você quer cria-lo?(Digite o caminho inteiro) ')
-os.system('clear') or None
-
+if platform == 'win32':
+    os.system('cls')
+      
+cont = 0
 try:
     while True:
         if cont != 0:
