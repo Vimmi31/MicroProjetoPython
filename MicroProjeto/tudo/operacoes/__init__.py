@@ -27,13 +27,26 @@ def sair(seg = 0.2, tracos = 50):
     traco(tracos)
     quit()
  
-   
-def adicionaPessoa(tracos = 50):
+
+def ehCaminho(txt = 'Digite o caminho'):
+    from os.path import isdir
+    while True:
+        caminho = str(input('\033[1;36m' + txt + '\033[0;0m'))
+        if isdir(caminho) == False:
+            print('\033[1;91mO caminho que você digitou não é válido\033[0;0m')
+            continue
+        else:
+            print(f'\033[1;92mOk! O arquivo será criado em: {caminho}\033[0;0m')
+            break
+    return caminho+'pessoas.txt' 
+
+
+def adicionaPessoa(tracos = 50, caminho = ''):
     try:
-        open('/media/vinicius/1D12E899389E14CB/MicroProjeto/Pessoas', 'r+') # r+ significa que o arquivo pode ser visto e editado quando o arquivo já existe(não cria arquivos)(vem de read)
+        open(caminho, 'r+') # r+ significa que o arquivo pode ser visto e editado quando o arquivo já existe(não cria arquivos)(vem de read)
     except FileNotFoundError:
-        open('/media/vinicius/1D12E899389E14CB/MicroProjeto/Pessoas', 'w+') # w+ significa que o arquivo pode ser visto e editado quando o arquivo não existe(xria arquivos)(vem de write)
-    pessoas = open('/media/vinicius/1D12E899389E14CB/MicroProjeto/Pessoas', 'a') # a vem de append, td o conteudo novo será adicinado no final do arquivo
+        open(caminho, 'w+') # w+ significa que o arquivo pode ser visto e editado quando o arquivo não existe(cria arquivos)(vem de write)    
+    pessoas = open(caminho, 'a') # a vem de append, td o conteudo novo será adicinado no final do arquivo
     try:
         while True:
             pessoa = {'Nome': input('\033[1;36mNome da pessoa: '),
@@ -55,9 +68,9 @@ def adicionaPessoa(tracos = 50):
     pessoas.close() #Arquivos abertos precisam ser fechados de forma correta no fim, por isso usamos o close 
 
 
-def verArquivo(tracos = 50):
+def verArquivo(tracos = 50, caminho= ''):
     try:
-        arq = open('/media/vinicius/1D12E899389E14CB/MicroProjeto/Pessoas', 'r+') # r+ significa que o arquivo pode ser visto e editado quando o arquivo já existe(não cria arquivos)(vem de read)
+        arq = open(caminho, 'r+') # r+ significa que o arquivo pode ser visto e editado quando o arquivo já existe(não cria arquivos)(vem de read)
     except FileNotFoundError:
         print('O arquivo ainda não foi criado')
     else:
