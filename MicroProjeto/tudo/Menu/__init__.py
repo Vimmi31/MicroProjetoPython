@@ -3,6 +3,12 @@ def traco(n = 50):
 
 
 def cabecalho(txt = 'Menu', tracos = 50):
+    """[Imprime uma especie de cabeçalho]
+
+    Args:
+        txt (str, optional): [Texto que vai ser mostrado no cetro da tela]. Defaults to 'Menu'.
+        tracos (int, optional): [Quantos traços serão desenhados na tela?]. Defaults to 50.
+    """
     traco(tracos)
     print(f'\033[1;36m{txt}\033[0;0m'.center(tracos+14))
     traco(tracos)
@@ -31,6 +37,12 @@ def leiaInt(msg = ''):
 
 
 def Menu(lista, tracos = 50):
+    """Imprime um menu de opçoes 
+
+    Args:
+        lista ([list]): [Recebe a lista de opçoes que será impressa]
+        tracos (int, optional): [Quantos traços serão desenhados na tela?]. Defaults to 50.
+    """
     cont = 0
     for i in lista:
         cont += 1

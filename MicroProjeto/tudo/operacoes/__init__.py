@@ -1,8 +1,18 @@
 def traco(n = 50):
+    """[Imprime uma serie de traços na tela]
+
+    Args:
+        n (int, optional): [Numero de traços que serão exibidos]. Defaults to 50.
+    """
     print('-'*n)
 
 
 def NouS(txt = 'S ou N?'):
+    """Função que roda até receber S ou N(Sim ou Não)
+
+    Args:
+        txt (str, optional): [Texto que vai imprimir na tela qunado chamada]. Defaults to 'S ou N?'.
+    """
     while True:
         try:
             resp = str(input(txt)[0]).upper().strip()
@@ -18,6 +28,12 @@ def NouS(txt = 'S ou N?'):
         
              
 def sair(seg = 0.2, tracos = 50):
+    """[Função que fecha o programa, com mensagem de despedida]
+
+    Args:
+        seg (float, optional): [Tempo de "animação"]. Defaults to 0.2.
+        tracos (int, optional): [Quantos traços mostrar?]. Defaults to 50.
+    """
     from time import sleep
     print('Saindo', end='')
     for i in '...':
@@ -29,6 +45,14 @@ def sair(seg = 0.2, tracos = 50):
  
 
 def ehCaminho(txt = 'Digite o caminho'):
+    """[Identifica se o caminho digitado pelo usuario é valido, se repete até receber um caminho valido]
+
+    Args:
+        txt (str, optional): [Mensagem que irá aparecer na tela]. Defaults to 'Digite o caminho'.
+
+    Returns:
+        [String]: [Retorna o caminho em que o arquivo será criado]
+    """
     from os.path import isdir
     while True:
         caminho = str(input('\033[1;36m' + txt + '\033[0;0m'))
@@ -42,6 +66,12 @@ def ehCaminho(txt = 'Digite o caminho'):
 
 
 def adicionaPessoa(tracos = 50, caminho = ''):
+    """[Função para adicionar informaçoes no documento de texto]
+
+    Args:
+        tracos (int, optional): [Quantos traços serão desenhados na tela?]. Defaults to 50.
+        caminho (str, optional): [Caminho em que o arquivo se encontra]. Defaults to ''.
+    """
     try:
         open(caminho, 'r+') # r+ significa que o arquivo pode ser visto e editado quando o arquivo já existe(não cria arquivos)(vem de read)
     except FileNotFoundError:
@@ -69,6 +99,12 @@ def adicionaPessoa(tracos = 50, caminho = ''):
 
 
 def verArquivo(tracos = 50, caminho= ''):
+    """[Mostra no console o arquivo criado com as informaçoes digitadas pelo usuario]
+
+    Args:
+        tracos (int, optional): [Quantos traços serão desenhados na tela?]. Defaults to 50.
+        caminho (str, optional): [Caminho em que o arquivo se encontra ]. Defaults to ''.
+    """
     try:
         arq = open(caminho, 'r+') # r+ significa que o arquivo pode ser visto e editado quando o arquivo já existe(não cria arquivos)(vem de read)
     except FileNotFoundError:
